@@ -17,6 +17,12 @@ router.get("/profile/:id", (req, res) =>
 router.put("/profile/:id", (req, res) => 
     profile.updateProfile(req, res)
 );
+router.put("address/profile/:id", (req, res) => 
+    profile.updateProfileAddress(req, res)
+);
+router.put("contact/profile/:id", (req, res) => 
+    profile.updateProfileContact(req, res)
+);
 router.delete("/profile/:id", (req, res) => 
     profile.deleteProfile(req, res)
 );
