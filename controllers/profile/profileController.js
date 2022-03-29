@@ -77,6 +77,60 @@ const updateProfile = (req, res) => {
         console.error(error);
     }
 }
+const updateProfileAddress = (req, res) => {
+    try {
+      const accountId = req.params.id;
+      const { name, lat, long } = req.body;
+
+      Profile.findOneAndUpdate(
+        { accountId },
+        {
+          $set: {
+            "address.name": name,
+            "address.coordinates.latitude": lat,
+            "address.coordinates.longitude": long,
+            "date.updatedAt": Date.now(),
+          },
+        },
+        {new: true})
+        .then((value) => {
+          if (!value) {
+            return res.status(400).json({ message: "accountId not found" });
+          }
+          res.status(200).json(value);
+        })
+        .catch((err) => res.status(400).json(err));
+    } catch (e) {
+      return res.status(400).json({ message: "Something went wrong" });
+    }
+}
+      
+const updateProfileContact = (req, res) => {
+    try {
+      const accountId = req.params.id;
+      const { email, number } = req.body;
+
+      Profile.findOneAndUpdate(
+        { accountId },
+        {
+          $set: {
+            "contact.email": email,
+            "contact.number": number,
+            "date.updatedAt": Date.now(),
+          },
+        },
+        {new: true})
+        .then((value) => {
+          if (!value) {
+            return res.status(400).json({ message: "accountId not found" });
+          }
+          return res.status(200).json(value);
+        })
+        .catch((err) => res.status(400).json(err));
+    } catch (e) {
+      return res.status(400).json({ message: "Something went wrong" });
+    }
+}
 
 const deleteProfile = (req, res) => {
     try {
@@ -160,5 +214,7 @@ module.exports = {
     updateProfile,
     deleteProfile,
     updateCustomerAvatar,
-    updateLaundryBanner
+    updateLaundryBanner,
+    updateProfileContact,
+    updateProfileAddress
 }
