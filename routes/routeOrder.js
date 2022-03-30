@@ -21,5 +21,10 @@ router.put("/order", (req, res) =>
     order.updateOrderStatus(req, res)
 );
 
+// @path: api/order/6242ee4393cf6a015647ce91
+// @Description: Delete order
+router.delete("/order/:id", (req, res) =>
+    order.deleteOrder(req, res)
+);
 
 module.exports = router;
