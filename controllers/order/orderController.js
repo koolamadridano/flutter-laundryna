@@ -69,9 +69,23 @@ const updateOrderStatus = (req, res) => {
         console.error(error);
     }
 }
-
+const deleteOrder = (req, res) => {
+    try {
+        const id = req.params.id;
+        Order.findByIdAndDelete(id)
+            .then((value) => {
+                if (!value) 
+                    return res.status(400).json({ message: "_id not found" });
+                return res.status(200).json({ message: "_id deleted"});
+            })
+            .catch((err) => res.status(400).json(err));
+    } catch (error) {
+        console.log(error);
+    }
+}
 module.exports = {
     createOrder,
     getOrders,
-    updateOrderStatus
+    updateOrderStatus,
+    deleteOrder
 }
