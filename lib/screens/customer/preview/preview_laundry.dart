@@ -260,8 +260,9 @@ class _PreviewLaundryState extends State<PreviewLaundry> {
                           double _kg = value;
                           int kilo = _kg.round();
                           setState(() {
-                            selectedPreferencesId.clear();
                             selectedPreferencesTotal = 0;
+                            selectedPreferencesId.clear();
+                            selectedPreferences.clear();
                             selectedKilo = value;
                             selectedPreferencesTotal += kilo * 15;
                           });
