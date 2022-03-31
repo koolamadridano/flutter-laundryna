@@ -59,7 +59,7 @@ class _CustomerState extends State<Customer> {
           leading: const SizedBox(),
           leadingWidth: 0.0,
           title: Text(
-            "Laundryna",
+            "Laundrynaa",
             style: GoogleFonts.roboto(
               color: Colors.white,
               fontSize: 16.0,

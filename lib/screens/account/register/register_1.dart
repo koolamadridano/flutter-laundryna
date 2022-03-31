@@ -70,7 +70,7 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     final _title = Text(
-      "Welcome to Laundryna!",
+      "Welcome to Laundrynaa!",
       style: GoogleFonts.chivo(
         fontSize: 25.0,
         fontWeight: FontWeight.bold,
@@ -199,7 +199,7 @@ class _RegisterState extends State<Register> {
                           });
                         },
                         title: Text(
-                          "By clicking Proceed you agree to Laundryna Terms of Service, Privacy Policy, and to receive important emails about my account.",
+                          "By clicking Proceed you agree to Laundrynaa Terms of Service, Privacy Policy, and to receive important emails about my account.",
                           style: GoogleFonts.roboto(
                             fontSize: 12.0,
                             fontWeight: FontWeight.w400,

@@ -68,7 +68,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     final _title = Text(
-      "Laundryna Account Login",
+      "Laundrynaa Account Login",
       style: GoogleFonts.chivo(
         fontSize: 25.0,
         fontWeight: FontWeight.bold,
